@@ -3,39 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple HTML Template</title>
+    <title>Damage Calculator</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script/index.js" type="text/javascript" defer></script>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
 
-    <!-- Main Content -->
-    <main>
-        <section>
-            <h2>About Us</h2>
-            <p>This is a simple HTML template demonstrating reusability and structure.</p>
-        </section>
-        <section>
-            <h2>Contact Us</h2>
-            <p>Feel free to reach out to us at info@example.com</p>
-        </section>
-    </main>
+    <div class="container">
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Simple HTML Template. All rights reserved.</p>
-    </footer>
+        <div class="column">
 
-    <!-- Optional: Include a template for reusability -->
-    <template id="welcome-msg">
-        <h1>Hello, World!</h1>
-        <p>And all who inhabit it</p>
-    </template>
+        </div>
 
-    <!-- Optional: Include a script for interactivity -->
-    <script src="index.js" type="text/javascript" defer></script>
+        <div class="column">
+            <input type="number" oninput="updateDamage(event)" id="baseDamage" placeholder="Base Damage">
+            <input type="number" oninput="updateDamage(event)" id="attacksPerSecond" placeholder="Attacks/s">
+            <input type="number" oninput="updateDamage(event)" id="strength" placeholder="Strength">
+            <input type="number" oninput="updateDamage(event)" id="critDamage" placeholder="Crit Damage">
+            <input type="number" oninput="updateDamage(event)" id="additiveMulti" placeholder="Additive">
+            <input type="number" oninput="updateDamage(event)" id="multiplicativeMulti" placeholder="Multiplicative">
+            <input type="number" oninput="updateDamage(event)" id="bonusMulti" placeholder="Bonus">
+        </div>
+
+        <div class="column">
+            <h1 class="dph">0</h1>
+            <h1 class="dps">0</h1>
+        </div>
+
+    </div>
+
 </body>
 </html>
