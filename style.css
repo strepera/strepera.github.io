@@ -4,6 +4,14 @@
     color: #ffffff;
 }
 
+.dps {
+    font-size: large;
+}
+
+.dph {
+    font-size: large;
+}
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -13,3 +21,5 @@
     padding: 1rem;
     box-sizing: border-box;
 }
+
+
