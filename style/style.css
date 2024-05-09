@@ -1,0 +1,45 @@
+body {
+    background-color: #121212;
+    font-family: sans-serif;
+    color: #ffffff;
+}
+  
+.bigtext {
+  border: 0.2rem solid rgb(34, 98, 236);
+  font-size: large;
+  color: white;
+  background-color: rgb(43, 43, 43);
+  border-radius: 7px;
+  text-align: center;
+  user-select: none;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  flex: 1;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input {
+  max-width: 5rem;
+  padding:.5rem;
+  border: solid #000000;
+  border-width: 0 2px;
+  font-size: 1.7rem;
+  height: 3rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  background: #2c2c2c;
+}
