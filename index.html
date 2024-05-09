@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Damage Calculator</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="style/style.css" rel="stylesheet" type="text/css" />
     <script src="script/index.js" type="text/javascript" defer></script>
 </head>
 <body>
@@ -12,25 +12,70 @@
     <div class="container">
 
         <div class="column">
-
-        </div>
-
-        <div class="column">
-            <input type="number" oninput="updateDamage(event)" id="baseDamage" placeholder="Base Damage">
-            <input type="number" oninput="updateDamage(event)" id="attacksPerSecond" placeholder="Attacks/s">
-            <input type="number" oninput="updateDamage(event)" id="strength" placeholder="Strength">
-            <input type="number" oninput="updateDamage(event)" id="critDamage" placeholder="Crit Damage">
-            <input type="number" oninput="updateDamage(event)" id="additiveMulti" placeholder="Additive">
-            <input type="number" oninput="updateDamage(event)" id="multiplicativeMulti" placeholder="Multiplicative">
-            <input type="number" oninput="updateDamage(event)" id="bonusMulti" placeholder="Bonus">
-        </div>
-
-        <div class="column">
-            <div class="bigtext">Damage per hit</div>
-            <div id="dph">0</div>
+            <div class="bigtext">
+                Combat Multiplier
+                <div id="combatLevelText">0</div>
+            </div>
             <br>
-            <div class="bigtext">Damage per second</div>
-            <div id="dps">0</div>
+            <input type="number" oninput="combatUpdate(event)" id="combatLevel" placeholder="Lvl">
+        </div>
+
+        <div class="column">
+            <input type="number" oninput="updateDamage(event)" id="baseDamage" placeholder="Base"><br>
+            <input type="number" oninput="updateDamage(event)" id="attacksPerSecond" placeholder="Atks"><br>
+            <input type="number" oninput="updateDamage(event)" id="strength" placeholder="Str"><br>
+            <input type="number" oninput="updateDamage(event)" id="critDamage" placeholder="Crit"><br>
+            <input type="number" oninput="updateDamage(event)" id="additiveMulti" placeholder="Addi"><br>
+            <input type="number" oninput="updateDamage(event)" id="multiplicativeMulti" placeholder="Mult"><br>
+            <input type="number" oninput="updateDamage(event)" id="bonusMulti" placeholder="+"><br>
+        </div>
+
+        <div class="column">
+            <div class="bigtext">
+                Damage per hit
+                <div id="dph">0</div>
+            </div><br>
+
+            <div class="bigtext">
+                Damage per second
+                <div id="dps">0</div>
+            </div><br>
+
+            <div class="bigtext">
+                Base Damage
+                <div id="baseDamageText">0</div>
+            </div><br>
+
+            <div class="bigtext">
+                Attacks/s
+                <div id="attacksPerSecondText">0</div>
+            </div><br>
+
+            <div class="bigtext">
+                Strength
+                <div id="strengthText">0</div>
+            </div><br>
+
+            <div class="bigtext">
+                Crit Damage
+                <div id="critDamageText">0</div>
+            </div><br>
+
+            <div class="bigtext">
+                Additive
+                <div id="additiveMultiText">0</div>
+            </div><br>
+
+            <div class="bigtext">
+                Multiplicative
+                <div id="multiplicativeMultiText">0</div>
+            </div><br>
+
+            <div class="bigtext">
+                Bonus
+                <div id="bonusMultiText">0</div>
+            </div>
+
         </div>
 
     </div>
