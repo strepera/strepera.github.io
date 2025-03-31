@@ -108,5 +108,5 @@ const locations = [
 
 const setRandomLocation = (element) => {
     const random = locations[Math.floor(Math.random()*(locations.length-1))];
-    element.innerHTML = `<img src="${random.image}"><p>${random.coords.join(", ")}</p>`;
+    element.innerHTML = `<img src="${random.image}"><p>${random.coords.join(", ")}</p><p>${random.island}</p>`;
 }
