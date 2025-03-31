@@ -1,1 +1,1 @@
-# snailifyxd.github.io
+# strepera.github.io
