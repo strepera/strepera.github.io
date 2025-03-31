@@ -108,19 +108,19 @@ const locations = [
 
 const islands = {
     "hub": {
-        image: "https://static.wikia.nocookie.net/hypixel-skyblock/images/e/e6/Hub_Island_%280.13%29_%28Top_View%29.png/revision/latest?cb=20230401075245"
+        image: "https://i.ibb.co/zTf8DwhY/Hub-Island-0-13-Top-View.webp"
     },
     "dwarven": {
-        image: "https://static.wikia.nocookie.net/hypixel-skyblock/images/2/2c/Dwarven_Mines_Map.png/revision/latest?cb=20210202103558"
+        image: "https://i.ibb.co/ycTRBRV2/Dwarven-Mines-Map.webp"
     },
     "isle": {
-        image: "https://static.wikia.nocookie.net/hypixel-skyblock/images/2/2c/Dwarven_Mines_Map.png/revision/latest?cb=20210202103558"
+        image: "https://i.ibb.co/XrBBSF5r/Crimson-Isle-0-13-Top-View.webp"
     },
     "park": {
-        image: "https://static.wikia.nocookie.net/hypixel-skyblock/images/f/f8/The_Park_%280.7.4%29_%28Top_View%29.png/revision/latest?cb=20210304112043"
+        image: "https://i.ibb.co/4RfzfcGH/The-Park-0-7-4-Top-View.webp"
     },
     "rift": {
-        image: "https://static.wikia.nocookie.net/hypixel-skyblock/images/6/6a/Rift_Dimension.png/revision/latest?cb=20250202044224"
+        image: "https://i.ibb.co/1DgdWmy/Rift-Dimension.webp"
     }
 }
 
