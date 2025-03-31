@@ -17,13 +17,26 @@
             width: 50%;
             height: auto;
         }
+
+        html {
+            background-color: #191919;
+            color: white;
+        }
     </style>
 </head>
 <body>
 
-    <button onclick="setRandomLocation(document.getElementById('container'))">Start</button>
+    <button onclick="setRandomLocation()">Start</button>
 
-    <div id="container">
+    <select name="island" id="mapSelect" onselect="updateMap(this.value)">
+        
+    </select>
+
+    <div id="location">
+
+    </div>
+
+    <div id="map">
 
     </div>
 

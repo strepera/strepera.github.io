@@ -106,7 +106,33 @@ const locations = [
     // }
 ]
 
-const setRandomLocation = (element) => {
+const islands = {
+    "hub": {
+        image: "https://static.wikia.nocookie.net/hypixel-skyblock/images/e/e6/Hub_Island_%280.13%29_%28Top_View%29.png/revision/latest?cb=20230401075245"
+    },
+    "dwarven": {
+        image: "https://static.wikia.nocookie.net/hypixel-skyblock/images/2/2c/Dwarven_Mines_Map.png/revision/latest?cb=20210202103558"
+    },
+    "isle": {
+        image: "https://static.wikia.nocookie.net/hypixel-skyblock/images/2/2c/Dwarven_Mines_Map.png/revision/latest?cb=20210202103558"
+    },
+    "park": {
+        image: "https://static.wikia.nocookie.net/hypixel-skyblock/images/f/f8/The_Park_%280.7.4%29_%28Top_View%29.png/revision/latest?cb=20210304112043"
+    },
+    "rift": {
+        image: "https://static.wikia.nocookie.net/hypixel-skyblock/images/6/6a/Rift_Dimension.png/revision/latest?cb=20250202044224"
+    }
+}
+
+const setRandomLocation = () => {
     const random = locations[Math.floor(Math.random()*(locations.length-1))];
-    element.innerHTML = `<img src="${random.image}"><p>${random.coords.join(", ")}</p><p>${random.island}</p>`;
+    document.getElementById('location').innerHTML = `<img src="${random.image}"><p>${random.coords.join(", ")}</p><p>${random.island}</p>`;
+    document.getElementById('mapSelect').innerHTML = '';
+    for (let name of Object.keys(islands)) {
+        document.getElementById('mapSelect').innerHTML += `<option value="${name}">${name}</option>`
+    }
+}
+
+const updateMap = (island) => {
+    document.getElementById('map').innerHTML = `<img src="${islands[island].image}">`
 }
