@@ -14,7 +14,7 @@
         }
 
         img {
-            width: 50%;
+            width: 40%;
             height: auto;
         }
 
@@ -28,7 +28,7 @@
 
     <button onclick="setRandomLocation()">Start</button>
 
-    <select name="island" id="mapSelect" onselect="updateMap(this.value)">
+    <select name="island" id="mapSelect" onchange="updateMap(this.value)">
         
     </select>
 
@@ -39,6 +39,8 @@
     <div id="map">
 
     </div>
+
+    <button onclick="finishGame()">Confirm</button>
 
 </body>
 </html>

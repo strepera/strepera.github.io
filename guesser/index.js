@@ -136,3 +136,7 @@ const setRandomLocation = () => {
 const updateMap = (island) => {
     document.getElementById('map').innerHTML = `<img src="${islands[island].image}">`
 }
+
+const finishGame = () => {
+    
+}
