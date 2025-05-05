@@ -15,7 +15,8 @@ async function getGist() {
 }
 
 const sortBy = async (type) => {
-    const data = await getGist();
+    let data = await getGist();
+    data = Object.values(data);
     switch (type) {
         case "messages":
             data.sort((a, b) => Object.values(b.messages).reduce((a2,b2)=>a2+b2) - Object.values(a.messages).reduce((a2,b2)=>a2+b2));
