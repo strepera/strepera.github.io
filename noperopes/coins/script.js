@@ -14,7 +14,7 @@ async function getGist() {
   return gistData;
 }
 
-const sortBy = (type) => {
+const sortBy = async (type) => {
     const data = await getGist();
     switch (type) {
         case "messages":
@@ -38,5 +38,5 @@ const sortBy = (type) => {
 }
 
 window.onload = async () => {
-    sortBy("alphabetical");
+    await sortBy("alphabetical");
 }
