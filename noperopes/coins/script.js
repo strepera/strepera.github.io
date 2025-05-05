@@ -11,7 +11,7 @@ function closeNav() {
 async function getGist() {
   const response = await fetch('https://gist.githubusercontent.com/strepera/92787e502ca6a3babe43c3a20ff9a4ec/raw/e2848bcefd007c9e2f67cd39ec404d5db75f91bb/player_data.json');
   const gistData = await response.json();
-  return users;
+  return gistData;
 }
 
 window.onload = async () => {
