@@ -14,19 +14,29 @@ async function getGist() {
   return gistData;
 }
 
-window.onload = async () => {
-  const data = await getGist();
-  if (data == 'You are being rate limited. (Limit: 60 requests/h)') {
-    document.getElementById("playerData").innerHTML = data;
-    return;
-  }
-  data.sort((a, b) => a.username.localeCompare(b.username));
+const sortBy = (type) => {
+    const data = await getGist();
+    switch (type) {
+        case "messages":
+            data.sort((a, b) => Object.values(b.messages).reduce((a2,b2)=>a2+b2) - Object.values(a.messages).reduce((a2,b2)=>a2+b2));
+        case "alphabetical":
+            data.sort((a, b) => a.username.localeCompare(b.username));
+            break;
+        case "coins":
+            data.sort((a ,b) => b.coins - a.coins);
+            break;
+        default:
+            return;
+    }
+    let lines = [];
+    for (const entry in data) {
+      let line = [];
+      line.push('<strong>' + data[entry].username + '</strong> | ' + '<div class="dcuser">Coins: ' + data[entry].coins + ' </div>| <div class="uuid">Messages: ' + Object.values(data[entry].messages).reduce((a,b) => a+b, 0) + '</div>');
+      lines.push(line.join(' '));
+    }
+    document.getElementById("playerData").innerHTML = lines.join('<br><br>');
+}
 
-  let lines = [];
-  for (const entry in data) {
-    let line = [];
-    line.push('<strong>' + data[entry].username + '</strong> | ' + '<div class="dcuser">Coins: ' + data[entry].coins + ' </div>| <div class="uuid">Messages: ' + Object.values(data[entry].messages).reduce((a,b) => a+b, 0) + '</div>');
-    lines.push(line.join(' '));
-  }
-  document.getElementById("playerData").innerHTML = lines.join('<br><br>');
+window.onload = async () => {
+    sortBy("alphabetical");
 }
