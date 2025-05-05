@@ -8,6 +8,8 @@ function closeNav() {
   document.getElementById("main").style.marginLeft = "0";
 } 
 
+let data;
+
 async function getGist() {
   const response = await fetch('https://gist.githubusercontent.com/strepera/92787e502ca6a3babe43c3a20ff9a4ec/raw/1e2fa35f296e3b8a420686b7a130024e18bb6dab/player_data.json');
   const gistData = await response.json();
@@ -15,11 +17,14 @@ async function getGist() {
 }
 
 const sortBy = async (type) => {
-    let data = await getGist();
-    data = Object.values(data);
+    if (!data) {
+        data = await getGist();
+        data = Object.values(data);
+    }
     switch (type) {
         case "messages":
             data.sort((a, b) => Object.values(b.messages).reduce((a2,b2)=>a2+b2) - Object.values(a.messages).reduce((a2,b2)=>a2+b2));
+            break;
         case "alphabetical":
             data.sort((a, b) => a.username.localeCompare(b.username));
             break;
