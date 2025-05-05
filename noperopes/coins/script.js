@@ -29,7 +29,7 @@ const sortBy = async (type) => {
         default:
             return;
     }
-    let lines = [`<input type="button" value="Sort by coins" onclick="await sortBy('coins')">`, `<input type="button" value="Sort by messages" onclick="await sortBy('messages')">`];
+    let lines = [`<input type="button" value="Sort by alphabetical" onclick="sortBy('alphabetical')">`, `<input type="button" value="Sort by coins" onclick="sortBy('coins')">`, `<input type="button" value="Sort by messages" onclick="sortBy('messages')">`];
     for (const entry in data) {
       let line = [];
       line.push('<strong>' + data[entry].username + '</strong> | ' + '<div class="dcuser">Coins: ' + data[entry].coins + ' </div>| <div class="uuid">Messages: ' + Object.values(data[entry].messages).reduce((a,b) => a+b, 0) + '</div>');
