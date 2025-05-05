@@ -9,7 +9,7 @@ function closeNav() {
 } 
 
 async function getGist() {
-  const response = await fetch('https://gist.githubusercontent.com/strepera/92787e502ca6a3babe43c3a20ff9a4ec/raw/e2848bcefd007c9e2f67cd39ec404d5db75f91bb/player_data.json');
+  const response = await fetch('https://gist.githubusercontent.com/strepera/92787e502ca6a3babe43c3a20ff9a4ec/raw/1e2fa35f296e3b8a420686b7a130024e18bb6dab/player_data.json');
   const gistData = await response.json();
   return gistData;
 }
@@ -39,5 +39,5 @@ const sortBy = async (type) => {
 }
 
 window.onload = async () => {
-    await sortBy("alphabetical");
+    await sortBy("coins");
 }
