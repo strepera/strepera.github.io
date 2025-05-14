@@ -40,20 +40,22 @@ function createProjectCard(project) {
   const card = document.createElement('article');
   card.className = 'project-card';
   
-  // Add click handler to the card
   card.addEventListener('click', () => {
-    // Navigate to the module page
-    window.location.href = `${API_URL}/${project.id}`;
+    window.location.href = `https://chattriggers.com/modules/v/${project.name}`;
   });
+
+  const descriptionHtml = project.description ? 
+    markdown.toHTML(project.description) : 
+    'No description available';
 
   card.innerHTML = `
     <img src="${project.image || 'https://via.placeholder.com/400x200'}"
          class="project-image">
     <div class="project-content">
       <h2 class="project-name">${project.name}</h2>
-      <p class="project-description">
-        ${project.description?.substring(0, 300) || 'No description available'}
-      </p>
+      <div class="project-description">
+        ${descriptionHtml}
+      </div>
       <div class="project-stats">
         <div class="stat-item">
           <span class="stat-icon">📥</span>
