@@ -37,36 +37,36 @@ async function renderProjects() {
 }
 
 function createProjectCard(project) {
-    const card = document.createElement('article');
-    card.className = 'project-card';
-    
-    card.innerHTML = `
-        <img src="${project.image || 'https://via.placeholder.com/400x200'}" 
-             alt="${project.name}" 
-             class="project-image">
-        
-        <div class="project-content">
-            <h2 class="project-name">${project.name}</h2>
-            
-            <p class="project-description">
-                ${project.description || 'No description available'}
-            </p>
-            
-            <div class="project-stats">
-                <div class="stat-item">
-                    <span class="stat-icon">📥</span>
-                    <span class="downloads">${project.downloads || 0}</span>
-                </div>
-                
-                <div class="stat-item">
-                    <span class="stat-icon">🔢</span>
-                    <span class="version">${project.releases[0]?.releaseVersion || 'N/A'}</span>
-                </div>
-            </div>
+  const card = document.createElement('article');
+  card.className = 'project-card';
+  
+  // Add click handler to the card
+  card.addEventListener('click', () => {
+    // Navigate to the module page
+    window.location.href = `${API_URL}/${project.id}`;
+  });
+
+  card.innerHTML = `
+    <img src="${project.image || 'https://via.placeholder.com/400x200'}"
+         class="project-image">
+    <div class="project-content">
+      <h2 class="project-name">${project.name}</h2>
+      <p class="project-description">
+        ${project.description?.substring(0, 300) || 'No description available'}
+      </p>
+      <div class="project-stats">
+        <div class="stat-item">
+          <span class="stat-icon">📥</span>
+          <span class="downloads">${project.downloads || 0}</span>
         </div>
-    `;
-    
-    return card;
+        <div class="stat-item">
+          <span class="stat-icon">🔢</span>
+          <span class="version">${project.releases[0]?.releaseVersion || 'N/A'}</span>
+        </div>
+      </div>
+    </div>
+  `;
+  return card;
 }
 
 // Initial load
