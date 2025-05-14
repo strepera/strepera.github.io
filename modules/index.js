@@ -45,7 +45,7 @@ function createProjectCard(project, Markdown) {
   });
 
   const descriptionHtml = project.description ? 
-    Markdown.toHTML(project.description) : 
+    Markdown.toHTML(project.description.substring(0, 600)) : 
     'No description available';
 
   card.innerHTML = `
