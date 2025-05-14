@@ -4,8 +4,6 @@
 // Copyright (c) 2011 Christoph Dorn <christoph@christophdorn.com> (http://www.christophdorn.com)
 // Date: 2013-09-15T16:09Z
 
-(function(expose) {
-
 
 
 
@@ -1725,13 +1723,3 @@
   Markdown.dialects.Maruku.inline.__escape__ = /^\\[\\`\*_{}\[\]()#\+.!\-|:]/;
   Markdown.buildBlockOrder ( Markdown.dialects.Maruku.block );
   Markdown.buildInlinePatterns( Markdown.dialects.Maruku.inline );
-
-
-// Include all our depndencies and;
-  expose.Markdown = Markdown;
-  expose.parse = Markdown.parse;
-  expose.toHTML = Markdown.toHTML;
-  expose.toHTMLTree = Markdown.toHTMLTree;
-  expose.renderJsonML = Markdown.renderJsonML;
-
-})();

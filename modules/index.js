@@ -16,7 +16,7 @@ async function fetchProjects() {
     }
 }
 
-async function renderProjects() {
+async function renderProjects(Markdown) {
     const container = document.querySelector('.projects-grid');
     
     // Clear existing projects
@@ -31,12 +31,12 @@ async function renderProjects() {
     
     // Create project cards dynamically
     projectsData.forEach(project => {
-        const card = createProjectCard(project);
+        const card = createProjectCard(project, Markdown);
         container.appendChild(card);
     });
 }
 
-function createProjectCard(project) {
+function createProjectCard(project, Markdown) {
   const card = document.createElement('article');
   card.className = 'project-card';
   
@@ -71,5 +71,3 @@ function createProjectCard(project) {
   return card;
 }
 
-// Initial load
-document.addEventListener('DOMContentLoaded', renderProjects);
