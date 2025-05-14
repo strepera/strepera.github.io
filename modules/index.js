@@ -1,4 +1,4 @@
-const API_URL = 'https://chattriggers.com/api/modules?q=sulphursky';
+const API_URL = 'https://modules.snailify.workers.dev';
 
 async function fetchProjects() {
     try {
